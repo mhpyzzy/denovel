@@ -26,7 +26,7 @@
 							<van-icon name="checked" color="#59BF31" v-if="item.collection == 1" />
 							<van-icon name="clear" v-else />
 						</div>
-						<div class="step" @click="$router.push('/award')">
+						<div class="step" @click="$router.push('/copyright')">
 							<span><van-icon name="award" /> 版权包</span>
 							<van-icon name="checked" color="#59BF31" v-if="item.copyright == 1" />
 							<van-icon name="clear" v-else />

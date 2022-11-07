@@ -10,7 +10,12 @@
 </template>
 
 <script setup>
-import { reactive, computed, ref } from 'vue';
+// import { useFullscreen } from '@vueuse/core';
+// import { onBeforeMount, onMounted } from 'vue';
+// const { isFullscreen, enter, exit, toggle } = useFullscreen();
+// onMounted(async () => {
+// 	toggle();
+// });
 </script>
 
 <style lang="less" scoped>

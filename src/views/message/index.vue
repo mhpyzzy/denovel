@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { reactive, computed, ref } from 'vue';
+import { reactive, computed, ref, onMounted } from 'vue';
 const show = ref();
 const state = reactive({
 	list: [

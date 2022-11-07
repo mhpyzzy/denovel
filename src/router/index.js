@@ -10,8 +10,9 @@ const router = createRouter({
 			component: Home,
 			children: [
 				{
-					path: 'message',
+					path: '',
 					name: 'message',
+					alias: ['message'],
 					// route level code-splitting
 					// this generates a separate chunk (about.[hash].js) for this route
 					// which is lazy-loaded when the route is visited.
@@ -75,6 +76,19 @@ const router = createRouter({
 			path: '/collecting',
 			name: 'collecting',
 			component: () => import(/* webpackChunkName: "collecting" */ '../views/create/collection/collecting.vue'),
+		},
+
+		// 创建藏品
+		{
+			path: '/copyright',
+			name: 'copyright',
+			component: () => import(/* webpackChunkName: "copyright" */ '../views/create/copyright/index.vue'),
+		},
+		// 创建藏品
+		{
+			path: '/copyrighting',
+			name: 'copyrighting',
+			component: () => import(/* webpackChunkName: "copyrighting" */ '../views/create/copyright/copyrighting.vue'),
 		},
 	],
 });

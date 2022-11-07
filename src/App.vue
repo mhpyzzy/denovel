@@ -1,7 +1,6 @@
 <template>
 	<router-view />
 </template>
-
 <style lang="less" scoped>
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;

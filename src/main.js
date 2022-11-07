@@ -10,9 +10,9 @@ import './styles/base.css'; // 自定义样式
 
 const app = createApp(App);
 
-import { Space, Tabbar, TabbarItem, Button, Popup, Icon, Swipe, SwipeItem, Image as VanImage, Field, Badge, Progress, List, Divider, Tab, Tabs, Uploader, Picker } from 'vant';
+import { Space, Tabbar, TabbarItem, Button, Popup, Icon, Swipe, SwipeItem, Image as VanImage, Field, Badge, Progress, List, Divider, Tab, Tabs, Uploader, Picker,NumberKeyboard } from 'vant';
 
-[Space, Tabbar, TabbarItem, Button, Popup, Icon, Swipe, SwipeItem, VanImage, Field, Badge, Progress, List, Divider, Tab, Tabs, Uploader, Picker].map((com) => {
+[Space, Tabbar, TabbarItem, Button, Popup, Icon, Swipe, SwipeItem, VanImage, Field, Badge, Progress, List, Divider, Tab, Tabs, Uploader, Picker,NumberKeyboard].map((com) => {
 	app.use(com);
 });
 
