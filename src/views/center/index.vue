@@ -20,7 +20,7 @@
 				<template #title>
 					<div class="tab_title">收入</div>
 				</template>
-				内容
+				<v-chart class="chart" :option="option" />
 			</van-tab>
 			<van-tab>
 				<template #title>
@@ -46,16 +46,54 @@
 
 <script setup>
 import { reactive, computed, ref } from 'vue';
+import { use } from 'echarts/core';
+import { CanvasRenderer } from 'echarts/renderers';
+import { PieChart } from 'echarts/charts';
+import { TitleComponent, TooltipComponent, LegendComponent } from 'echarts/components';
+import VChart from 'vue-echarts';
+use([CanvasRenderer, PieChart, TitleComponent, TooltipComponent, LegendComponent]);
+
 const show = ref(false);
 const showPopup = () => {
 	show.value = true;
 };
+
+const option = ref({
+	// title: {
+	// 	text: 'Traffic Sources',
+	// 	left: 'center',
+	// },
+	// tooltip: {
+	// 	trigger: 'item',
+	// 	formatter: '{a} <br/>{b} : {c} ({d}%)',
+	// },
+	// legend: {
+	// 	orient: 'vertical',
+	// 	left: 'left',
+	// 	data: ['Direct', 'Email', 'Ad Networks', 'Video Ads', 'Search Engines'],
+	// },
+	series: [
+		{
+			name: 'Traffic Sources',
+			type: 'pie',
+			radius: '55%',
+			center: ['50%', '60%'],
+			data: [
+				{ value: 335, name: '付费阅读1 50%' },
+				{ value: 310, name: '付费阅读2' },
+				{ value: 234, name: '付费阅读3' },
+				{ value: 135, name: '付费阅读4' },
+				{ value: 1548, name: '付费阅读5' },
+			],
+		},
+	],
+});
 </script>
 
 <style lang="less" scoped>
 .center {
 	background: #f6f6f6;
-	min-height: 100vh;
+	// min-height: 100vh;
 	.header {
 		position: relative;
 		height: 200px;
@@ -128,7 +166,7 @@ const showPopup = () => {
 		}
 		/deep/.van-tabs__content {
 			background: #fff;
-			min-height: 300px;
+			min-height: 200px;
 			border-top-left-radius: 10px;
 			border-top-right-radius: 10px;
 			padding: 10px;
@@ -146,6 +184,11 @@ const showPopup = () => {
 			background: @--color-2;
 			color: #fff;
 		}
+	}
+
+	.chart {
+		width: 100vw;
+		height: 300px;
 	}
 }
 </style>
